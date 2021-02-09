@@ -143,7 +143,7 @@ def main() -> None:
     elif platform == 'macos':
         repair_command_default = 'delocate-listdeps {wheel} && delocate-wheel --require-archs {delocate_archs} -w {dest_dir} {wheel}'
     elif platform == 'windows':
-        repair_command_default = ''
+        repair_command_default = 'delvewheel repair -w {dest_dir} {wheel}'
     else:
         assert_never(platform)
 

@@ -388,7 +388,7 @@ Default:
 
 - on Linux: `'auditwheel repair -w {dest_dir} {wheel}'`
 - on macOS: `'delocate-listdeps {wheel} && delocate-wheel --require-archs {delocate_archs} -w {dest_dir} {wheel}'`
-- on Windows: `''`
+- on Windows: `'delvewheel repair -w {dest_dir} {wheel}'`
 
 A shell command to repair a built wheel by copying external library dependencies into the wheel tree and relinking them.
 The command is run on each built wheel (except for pure Python ones) before testing it.

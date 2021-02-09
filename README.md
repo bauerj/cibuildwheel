@@ -38,7 +38,7 @@ What does it do?
 
 - Builds manylinux, macOS 10.9+, and Windows wheels for CPython and PyPy
 - Works on GitHub Actions, Azure Pipelines, Travis CI, AppVeyor, CircleCI, and GitLab CI
-- Bundles shared library dependencies on Linux and macOS through [auditwheel](https://github.com/pypa/auditwheel) and [delocate](https://github.com/matthew-brett/delocate)
+- Bundles shared library dependencies on Linux, macOS and Windows through [auditwheel](https://github.com/pypa/auditwheel), [delocate](https://github.com/matthew-brett/delocate) and [delvewheel](https://github.com/adang1345/delvewheel) respectively.
 - Runs your library's tests against the wheel-installed version of your library
 
 Usage
@@ -299,7 +299,7 @@ Here are some repos that use cibuildwheel.
 Legal note
 ----------
 
-Since `cibuildwheel` repairs the wheel with `delocate` or `auditwheel`, it might automatically bundle dynamically linked libraries from the build machine.
+Since `cibuildwheel` repairs the wheel with `delocate`, `auditwheel`, or `delvewheel`, it might automatically bundle dynamically linked libraries from the build machine.
 
 It helps ensure that the library can run without any dependencies outside of the pip toolchain.
 

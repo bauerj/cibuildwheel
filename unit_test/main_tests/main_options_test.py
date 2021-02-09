@@ -104,7 +104,7 @@ def get_default_repair_command(platform):
     elif platform == 'macos':
         return 'delocate-listdeps {wheel} && delocate-wheel --require-archs {delocate_archs} -w {dest_dir} {wheel}'
     elif platform == 'windows':
-        return ''
+        return 'delvewheel repair -w {dest_dir} {wheel}'
     else:
         raise ValueError('Unknown platform', platform)
 
